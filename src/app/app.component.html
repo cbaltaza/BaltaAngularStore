@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
 
-
+<!--
 <h1>Formulario</h1>
 <form (ngSubmit)="onRegister()" #myForm="ngForm">
   <div class="input-group">
@@ -21,12 +21,12 @@
   <button [disabled]="myForm.invalid" type="submit">Registrar</button>
   <button type="button">Accion</button>
 </form>
-<hr />
+<hr /> -->
 
 <app-componentes [respuesta]="products"></app-componentes>
 
 
-
+<!--
 <h1>NgClass & NgStyle</h1>
 <input type="text" required #nameInput4="ngModel" [(ngModel)]="Persona.name" />
 <hr class="line-error"
@@ -91,7 +91,7 @@
   </p>
   <p *ngSwitchDefault>No hace match</p>
 </div>
-<!-- <p *ngIf="person.name === 'nicolas'">
+<!!-- <p *ngIf="person.name === 'nicolas'">
   La persona es nicolas
 </p>
 
@@ -101,7 +101,7 @@
 
 <p *ngIf="person.name === 'camilo'">
   La persona es Camilo
-</p> -->
+</p> ->
 <hr/>
 
 <h1>*ngFor</h1>
@@ -163,4 +163,4 @@
 <p>3 + 3 = {{3+3}} </p>
 <h3>Hola, soy {{name}} y tengo {{age}} </h3>
 <img src="{{ img }}" alt="imagen random">
-
+ -->

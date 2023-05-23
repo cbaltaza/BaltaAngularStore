@@ -12,6 +12,6 @@ export class ThreescaleService {
 
   getRequest(){
 
-    return  this.http.get<Product>('https://api-2445584190275.staging.gw.apicast.io:443/?user_key=0981564e88cc649db607d29163d941ae');
+    return  this.http.get<Product>('https://api-2445584190275.staging.gw.apicast.io/?user_key=0981564e88cc649db607d29163d941ae');
   }
 }

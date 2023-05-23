@@ -1,12 +1,11 @@
 import { Headersscale } from "./headers.model";
 
 export interface Product {
-  method: string;
-  path: string;
-  body: string;
-  headers: string;
-  uuid: string;
-  bodySha1: string;
-  bodyLength: string;
+  productId: string;
+  name: string;
+  categoryId: string;
+  price: string;
+  stock: string;
+  active: string;
 
 }

@@ -12,13 +12,12 @@ export class AppComponent {
 
   products: Product =
     {
-      method: 'm',
-      path: 'p',
-      body: 'b',
-      headers: '',
-      uuid: 'u',
-      bodySha1: 'b1',
-      bodyLength: 'b2'
+      productId: 'm',
+      name: 'b',
+      categoryId: '',
+      price: 'u',
+      stock: 'b1',
+      active: 'b2'
     }
 
   box = {

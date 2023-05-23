@@ -11,13 +11,12 @@ import { ThreescaleService } from '../services/threescale.service';
 export class ComponentesComponent implements OnInit {
 
   @Input() respuesta: Product = {
-    method: '',
-    path: '',
-    body: '',
-    headers: '',
-    uuid: '',
-    bodySha1: '',
-    bodyLength: ''
+    productId: '',
+    name: '',
+    categoryId: '',
+    price: '',
+    stock: '',
+    active: ''
   };
 
   constructor(private datoServicio: ThreescaleService) {
