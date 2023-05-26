@@ -14,7 +14,7 @@ import { ComponentesComponent } from './componentes/componentes.component';
     ComponentesComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,

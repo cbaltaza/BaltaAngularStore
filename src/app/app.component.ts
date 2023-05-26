@@ -12,12 +12,12 @@ export class AppComponent {
 
   products: Product =
     {
-      productId: 'm',
-      name: 'b',
-      categoryId: '',
-      price: 'u',
-      stock: 'b1',
-      active: 'b2'
+      productId: '#',
+      name: '#',
+      categoryId: '#',
+      price: '#',
+      stock: '#',
+      active: '#'
     }
 
   box = {
@@ -38,7 +38,7 @@ export class AppComponent {
   Persona = {
     name: 'Baltazar',
     age: 37,
-    avatar: 'https://www.w3schools.com/howto/img_avatar.png'
+    avatar: 'https://multiva.com.mx/o/multiva-theme/images/logos/LogoGrupo.png'
   }
 
   names: string[] = ['Nico', 'Juli', 'Santi'];

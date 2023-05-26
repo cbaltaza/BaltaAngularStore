@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BaltaAnStore": {
+    "balta-an-store": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/balta-an-store",
+            "outputPath": "dist/balta-an-store/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,21 +30,16 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "5000kb",
+                  "maximumWarning": "500kb",
                   "maximumError": "1mb"
                 },
                 {
@@ -70,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "BaltaAnStore:build:production"
+              "browserTarget": "balta-an-store:build:production"
             },
             "development": {
-              "browserTarget": "BaltaAnStore:build:development"
+              "browserTarget": "balta-an-store:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "BaltaAnStore:build"
+            "browserTarget": "balta-an-store:build"
           }
         },
         "test": {
@@ -102,11 +97,65 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/balta-an-store/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "balta-an-store:build:development",
+              "serverTarget": "balta-an-store:server:development"
+            },
+            "production": {
+              "browserTarget": "balta-an-store:build:production",
+              "serverTarget": "balta-an-store:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "balta-an-store:build:production",
+              "serverTarget": "balta-an-store:server:production"
+            },
+            "development": {
+              "browserTarget": "balta-an-store:build:development",
+              "serverTarget": "balta-an-store:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
   },
   "cli": {
-    "analytics": "1684b9d4-1292-4935-9f06-5833a16a9b12"
+    "analytics": "a4c9b782-b7da-4a7f-bbed-80bcd01f1512"
   }
 }
